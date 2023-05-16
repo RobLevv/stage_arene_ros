@@ -1,0 +1,7 @@
+# Connection: wifi + bash without problem or crash
+# Scan: LiDAR working and giving adequate values
+# Camera: working and giving good image
+# robot_launch: launching all nodes, scan + core + camera (name="cam")
+# montage: charging front and driving backward
+
+Turtlebot23 : Connection=OK; Scan=OK; Camera=OK; robot_launch=OK; montage=reverse
