@@ -2,6 +2,6 @@
 # Scan: LiDAR working and giving adequate values
 # Camera: working and giving good image
 # robot_launch: launching all nodes, scan + core + camera (name="cam")
-# montage: charging front and driving backward
+# montage: charging front and driving forwards ( reverse: charging back and driving backwards)
 
 Turtlebot23 : Connection=OK; Scan=OK; Camera=OK; robot_launch=OK; montage=reverse
