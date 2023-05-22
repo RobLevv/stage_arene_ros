@@ -31,7 +31,8 @@ TACHES DE FOND
                           Retracer le parcours EC
                           Retracer les lignes AF
                           
-(->)EN COURS(->) Checkup des turtlebots:
+(->)EN COURS(->) Checkup des turtlebots:  
+                          Launch pour les checkups OK
                           Verifier connection (3/?)
                           Verifier nodes, cam,teleop,scan (3/?)
                           
