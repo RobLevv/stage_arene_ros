@@ -3,10 +3,10 @@
 
 (</)DONE(</)      Prototype barrière: Mardi, Mercredi (8h): tinkercad puis platine d'essai, code C++ activable et modulable
 
-(->)En COURS(->)  Simu 3D barrière: 
+(</)DONE(</)  Simu 3D barrière: 
                           Rviz OK 
-                          spawn gazebo OK 
-                          controle de la liaison avec ros (chercher dans joint_state_node) EC
+                          Spawn gazebo OK 
+                          Controle de la liaison avec ROS (service appelable) OK
 
 (->)EN COURS(->)  Dessin barrière:
                           Prototype SolidWorks EC
@@ -23,6 +23,7 @@
 (GO)A FAIRE(GO) Prototype RaspPI + Arduino + barrière + feux:
                           FINIR simu + dessin barrière EC
                           FINIR simu + dessin feux EC
+                          Simulation Gazebo avec toute la nouvelle piste AF
                           
 ================================================================
 TACHES DE FOND
