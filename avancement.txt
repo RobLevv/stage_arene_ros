@@ -1,0 +1,49 @@
+(</)DONE(</)      ROS Raspberry PI : Lundi -> Jeudi (15h): 2 réinstallation OS, dl ROS + maj (8h), config librairies + dl (4h) 
+                          Mettre internet sur la RaspPI (impossible :""""[ )
+
+(</)DONE(</)      Prototype barrière: Mardi, Mercredi (8h): tinkercad puis platine d'essai, code C++ activable et modulable
+
+(->)En COURS(->)  Simu 3D barrière: 
+                          Rviz OK 
+                          spawn gazebo OK 
+                          controle de la liaison avec ros (chercher dans joint_state_node) EC
+
+(->)EN COURS(->)  Dessin barrière:
+                          Prototype SolidWorks EC
+                          Fichiers pour impression (juste la barrière en gravure) AF
+
+(GO)A FAIRE(GO) Simu 3D feux:
+                          Rviz AF
+                          spawn gazebo AF
+                          controle lumière feu AF
+(GO)A FAIRE(GO) Dessin Feux:
+                          Prototype SolidWorks AF
+                          Fichiers pour impression AF
+
+(GO)A FAIRE(GO) Prototype RaspPI + Arduino + barrière + feux:
+                          FINIR simu + dessin barrière EC
+                          FINIR simu + dessin feux EC
+                          
+================================================================
+TACHES DE FOND
+================================================================
+(->)EN COURS(->) Seconde piste:
+                          Retracer le parcours EC
+                          Retracer les lignes AF
+                          
+(->)EN COURS(->) Checkup des turtlebots:
+                          Verifier connection (3/?)
+                          Verifier nodes, cam,teleop,scan (3/?)
+                          
+(->)EN COURS(->) Amélioration Simu Gazebo:
+                          Mesurer FOV cams OK
+                          Mesurer dimensions AF
+                          Reporter mesures AF
+
+(->)EN COURS(->) Amélioration salle rob:
+                          Ecrans OK
+                          Rangemet OK
+                          Menage AF
+                          Cables EC
+                          
+                 
