@@ -4,8 +4,9 @@
 # robot_launch: launching all nodes, scan + core + camera (name="cam")
 # montage: charging front and driving forwards ( reverse: charging back and driving backwards)
 
-
+Turtlebot4 : Connection=X; Scan=OK; Camera=NT; robot_launch=NT; montage=OK
 Turtlebot5 : Connection=OK; Scan=OK; Camera=OK; robot_launch=OK; montage=OK
 Turtlebot12 : Connection=OK; Scan=OK; Camera=OK; robot_launch=OK; montage=OK
-Turtlebot15 : Connection=X; Scan=NT; Camera=NT; robot_launch=NT; montage=OK
+Turtlebot14 : Connection=OK; Scan=OK; camera=RaspiCam; robot_launch=raspicam; montage=OK
+Turtlebot15 : Connection=X; Scan=X; Camera=NT; robot_launch=NT; montage=OK
 Turtlebot23 : Connection=OK; Scan=OK; Camera=OK; robot_launch=OK; montage=reverse
