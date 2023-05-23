@@ -7,4 +7,5 @@
 
 Turtlebot5 : Connection=OK; Scan=OK; Camera=OK; robot_launch=OK; montage=OK
 Turtlebot12 : Connection=OK; Scan=OK; Camera=OK; robot_launch=OK; montage=OK
+Turtlebot15 : Connection=X; Scan=NT; Camera=NT; robot_launch=NT; montage=OK
 Turtlebot23 : Connection=OK; Scan=OK; Camera=OK; robot_launch=OK; montage=reverse
