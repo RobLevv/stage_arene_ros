@@ -12,10 +12,10 @@
                           Prototype SolidWorks EC
                           Fichiers pour impression (juste la barrière en gravure) AF
 
-(GO)A FAIRE(GO) Simu 3D feux:
-                          Rviz AF
-                          spawn gazebo AF
-                          controle lumière feu AF
+(->)EN COURS(->) Simu 3D feux:
+                          Rviz OK
+                          spawn gazebo OK
+                          controle lumière feu EC
 (GO)A FAIRE(GO) Dessin Feux:
                           Prototype SolidWorks AF
                           Fichiers pour impression AF
