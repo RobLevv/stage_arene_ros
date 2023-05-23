@@ -1,5 +1,6 @@
 (</)DONE(</)      ROS Raspberry PI : Lundi -> Jeudi (15h): 2 réinstallation OS, dl ROS + maj (8h), config librairies + dl (4h) 
                           Mettre internet sur la RaspPI (impossible :""""[ )
+                          https://emanual.robotis.com/docs/en/platform/turtlebot3/sbc_setup/#sbc-setup
 
 (</)DONE(</)      Prototype barrière: Mardi, Mercredi (8h): tinkercad puis platine d'essai, code C++ activable et modulable
 
