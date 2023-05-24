@@ -10,21 +10,24 @@
                           Controle de la liaison avec ROS (service appelable) OK
 
 (->)EN COURS(->)  Dessin barrière:
-                          Prototype SolidWorks EC
+                          Prototype SolidWorks OK
                           Fichiers pour impression (juste la barrière en gravure) AF
 
 (->)EN COURS(->) Simu 3D feux:
                           Rviz OK
                           spawn gazebo OK
-                          controle lumière feu EC
+                          controle lumière feu OK
 (GO)A FAIRE(GO) Dessin Feux:
                           Prototype SolidWorks AF
                           Fichiers pour impression AF
 
 (GO)A FAIRE(GO) Prototype RaspPI + Arduino + barrière + feux:
-                          FINIR simu + dessin barrière EC
-                          FINIR simu + dessin feux EC
-                          Simulation Gazebo avec toute la nouvelle piste AF
+                          FINIR simu + dessin barrière OK
+                          FINIR simu + dessin feux OK
+                          Simulation Gazebo avec toute la nouvelle piste EC
+                          Communication entre RaspPI et Arduino AF
+                          Construire la nouvelle piste AF
+                          Duppliquer la piste AF
                           
 ================================================================
 TACHES DE FOND
