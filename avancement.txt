@@ -35,8 +35,8 @@ TACHES DE FOND
                           
 (->)EN COURS(->) Checkup des turtlebots:  
                           Launch pour les checkups OK
-                          Verifier connection (3/?)
-                          Verifier nodes, cam,teleop,scan (3/?)
+                          Verifier connection (6/?)
+                          Verifier nodes, cam,teleop,scan (6/?)
                           
 (->)EN COURS(->) Amélioration Simu Gazebo:
                           Mesurer FOV cams OK
