@@ -13,7 +13,7 @@
                           Prototype SolidWorks OK
                           Fichiers pour impression (juste la barrière en gravure) AF
 
-(->)EN COURS(->) Simu 3D feux:
+(</)DONE(</) Simu 3D feux:
                           Rviz OK
                           spawn gazebo OK
                           controle lumière feu OK
@@ -21,11 +21,11 @@
                           Prototype SolidWorks AF
                           Fichiers pour impression AF
 
-(GO)A FAIRE(GO) Prototype RaspPI + Arduino + barrière + feux:
+(->)EN COURS(->) Prototype RaspPI + Arduino + barrière + feux:
                           FINIR simu + dessin barrière OK
                           FINIR simu + dessin feux OK
                           Simulation Gazebo avec toute la nouvelle piste EC
-                          Communication entre RaspPI et Arduino AF
+                          Communication entre RaspPI et Arduino EC
                           Construire la nouvelle piste AF
                           Duppliquer la piste AF
                           
@@ -46,10 +46,10 @@ TACHES DE FOND
                           Mesurer dimensions AF
                           Reporter mesures AF
 
-(->)EN COURS(->) Amélioration salle rob:
+(</)DONE(</) Amélioration salle rob:
                           Ecrans OK
                           Rangemet OK
-                          Menage AF
-                          Cables EC
+                          Menage OK
+                          Cables OK
                           
                  
