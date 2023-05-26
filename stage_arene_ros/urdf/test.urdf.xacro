@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<robot name="myfirst" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    
+    <xacro:property name="pi" value="3.1415926535897931" />
+    <xacro:property name="width" value="0.1" />
+    <xacro:property name="radius" value="0.2" />
+    
+    <material name="red">
+      <color rgba="1 0 0 1"/>
+    </material>
+    <material name="green">
+      <color rgba="0 1 0 1"/>
+    </material>
+    <material name="black">
+      <color rgba="0 0 0 1"/>
+    </material>
+    <material name="purple">
+      <color rgba="0.5 0 0.5 1"/>
+    </material>
+
+    <link name="base_link">
+      <visual>
+        <geometry>
+          <box size="1 2 0.1"/>
+        </geometry>
+        <material name="red"/>
+      </visual>
+    </link>
+
+    <xacro:macro name="wheel" params="prefix suffix x y z reflect rd=">
+      <link name="${prefix}_${suffix}_wheel">
+        <visual>
+          <geometry>
+            <cylinder length="${width}" radius="${radius}"/>
+          </geometry>
+          <origin xyz="${x+width*1.5*rd} ${y} ${z}" rpy="0 ${pi/2} 0" />
+          <material name="red"/>
+        </visual>
+      </link>
+  
+      <joint name="base_to_${prefix}_${suffix}_wheel" type="fixed">
+        <parent link="base_link"/>
+        <child link="${prefix}_${suffix}_wheel"/>
+        <origin xyz="0 0 0"/>
+      </joint>
+    </xacro:macro>
+
+    <xacro:macro name="beam" params="prefix suffix x y z reflect rd">
+      <link name="${prefix}_${suffix}_beam">
+        <visual>
+          <geometry>
+            <box size="0.1 1.6 0.2"/>
+          </geometry>
+          <origin xyz="${x+width/2*rd} ${y} ${z}" rpy="${reflect*pi/4} 0 0" />
+          <material name="green"/>
+        </visual>
+      </link>
+  
+      <joint name="base_to_${prefix}_${suffix}_beam" type="fixed">
+        <parent link="base_link"/>
+        <child link="${prefix}_${suffix}_beam"/>
+        <origin xyz="0 0 0"/>
+      </joint>
+    </xacro:macro>
+
+    <link name="rotate_beam">
+      <visual>
+        <geometry>
+          <cylinder radius="0.02" length="1"/>
+        </geometry>
+        <origin xyz="0 0 1" rpy="0 ${pi/2} 0" />
+        <material name="black"/>
+      </visual>
+    </link>
+    <joint name="base_to_rotate_beam" type="fixed">
+      <parent link="base_link"/>
+      <child link="rotate_beam"/>
+      <origin xyz="0 0 0"/>
+    </joint>
+
+    <link name="counter-wheight">
+      <visual>
+        <geometry>
+          <sphere radius="0.4"/>
+        </geometry>
+        <origin xyz="0 0.8 1" rpy="0 0 0" />
+        <material name="purple"/>
+      </visual>
+    </link>
+    <joint name="rotate_beam_to_counter-wheight" type="fixed">
+      <parent link="rotate_beam"/>
+      <child link="counter-wheight"/>
+      <origin xyz="0 0 0"/>
+    </joint>
+
+    <link name="main_launch">
+      <visual>
+        <geometry>
+          <box size="0.4 0.4 0.1"/>
+        </geometry>
+        <origin xyz="0 -0.8 1" rpy="0 0 0" />
+        <material name="red"/>
+      </visual>
+    </link>
+    <joint name="rotate_beam_to_main_launch" type="fixed">
+      <parent link="rotate_beam"/>
+      <child link="main_launch"/>
+      <origin xyz="0 0 0"/>
+    </joint>
+
+    <xacro:wheel prefix="front" suffix="left" x="0.5" y="1" z="0" reflect="-1" rd="1"/>
+    <xacro:wheel prefix="front" suffix="right" x="0.5" y="-1" z="0" reflect="1" rd="1"/>
+    <xacro:wheel prefix="back" suffix="left" x="-0.5" y="1" z="0" reflect="-1" rd="-1"/>
+    <xacro:wheel prefix="back" suffix="right" x="-0.5" y="-1" z="0" reflect="1" rd="-1"/>
+
+    <xacro:beam prefix="front" suffix="left" x="0.5" y="0.5" z="0.45" reflect="-1" rd="1"/>
+    <xacro:beam prefix="front" suffix="right" x="0.5" y="-0.5" z="0.45" reflect="1" rd="1"/>
+    <xacro:beam prefix="back" suffix="left" x="-0.5" y="0.5" z="0.45" reflect="-1" rd="-1"/>
+    <xacro:beam prefix="back" suffix="right" x="-0.5" y="-0.5" z="0.45" reflect="1" rd="-1"/>
+
+    <xacro:beam prefix="main" suffix="launch" x="0" y="0" z="1" reflect="0" rd="0"/>
+    
+  </robot>

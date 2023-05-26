@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="traffic_lights_sim" xmlns:xacro="http://ros.org/wiki/xacro">
+    <gazebo reference="base_link">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="light_green">
+        <material>Gazebo/Green</material>
+    </gazebo>
+
+    <gazebo reference="light_orange">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="light_red">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+</robot>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot name="barrier_sim" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <gazebo reference="base_link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <gazebo reference="motor">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="gear">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="barrier">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
+</robot>

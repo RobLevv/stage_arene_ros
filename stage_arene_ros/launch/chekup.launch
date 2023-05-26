@@ -1,0 +1,25 @@
+<!-- <launch>
+  <arg name="multi_robot_name" default=""/>
+  <arg name="set_lidar_frame_id" default="base_scan"/>
+
+  <include file="$(find turtlebot3_bringup)/launch/turtlebot3_core.launch">
+    <arg name="multi_robot_name" value="$(arg multi_robot_name)"/>
+  </include>
+  <include file="$(find turtlebot3_bringup)/launch/turtlebot3_lidar.launch">
+    <arg name="set_frame_id" value="$(arg set_lidar_frame_id)"/>
+  </include>
+  <node pkg="usb_cam" type="usb_cam_node" name="cam"/>
+
+  <node pkg="turtlebot3_bringup" type="turtlebot3_diagnostics" name="turtlebot_diagnostics" output="screen"/>
+
+
+</launch> -->
+
+<launch>
+    <node pkg="stage_arene_ros" type="checkup_turtlebots.py" name="checkup" output="screen"></node>
+    <node pkg="stage_arene_ros" type="teleop_gazebo.py" name="teleop" output="screen"></node>
+
+    <param name="linear_scale" value="0.1"/>
+    <param name="angular_scale" value="1"/>
+
+</launch>

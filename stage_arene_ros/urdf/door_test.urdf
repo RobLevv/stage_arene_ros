@@ -1,0 +1,54 @@
+<robot name="door2">
+  <link name="wall">
+    <inertial>
+      <origin xyz="0 0 1.2" /> 
+      <mass value="100.0" />
+      <inertia  ixx="1.0" ixy="0"  ixz="0"  iyy="1.0"  iyz="0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 1.2"/>
+      <geometry>
+        <box size="0.2 2.4 2.4" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 1.2"/>
+      <geometry>
+        <box size="0.2 2.4 2.4" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="door">
+    <inertial>
+      <origin xyz="-0.1 0.6 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0"  ixz="0"  iyy="1.0"  iyz="0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.1 0.6 0"/>
+      <geometry>
+        <box size="0.2 1.2 2.4" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.1 0.6 0"/>
+      <geometry>
+        <box size="0.2 1.2 2.4" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="hinge" type="revolute">
+    <limit upper="0" lower="-1.57" velocity="10" effort="1"/>
+    <origin xyz="0.1 1.2 1.2"/>
+    <axis xyz="0 0 1" />
+    <parent link="wall"/>
+    <child link="door"/>
+  </joint>   
+
+  <gazebo reference="wall">
+    <material>Gazebo/Blue</material>
+    <static>true</static>
+  </gazebo>
+</robot>

@@ -1,0 +1,37 @@
+###turtlebot3_burger_for_autorace_2020.gazebo.xacro
+
+<gazebo reference=[LINK]>
+    #infos de dynamique : inertie, masse, frottements, maxVel ...
+</gazebo>
+
+<gazebo>
+    <plugin name="[PLUGIN]" filename="libgazebo_ros_control.so"> # je suis pas sur pour le filename
+        <commandTopic>[TOPIC]</commandTopic> # pour le robot c'est cmd_vel
+        #plein d'autres infos sur la dynamique du robot
+    </plugin>
+</gazebo>
+
+###turtlebot3_burger_for_autorace_2020.urdf.xacro
+
+#on crée un robot
+<robot name="turtlebot3_burger_for_autorace_2020" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find turtlebot3_description)/urdf/[FILE].gazebo.xacro" />
+    #surement un common_properties pour faire joli
+
+    <link name="[LINK]">
+        #on fait bien attention à ce que le nom du link soit le même que celui du fichier gazebo.xacro
+        #on met les propriétés de la géométrie du robot
+        <visual></visual>
+        <collision></collision>
+        <inertial></inertial>
+    </link>
+
+    <joint name="[JOINT]" type="fixed"> # continuous pour les roues/ revolute pour les bras
+        <parent link="[LINK_PARENT]"/>
+        <child link="[LINK_ENFANT]"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        #si ya du revolute ya des limites
+        <axis></axis>
+        <limit></limit>
+    </joint>
+</robot>
