@@ -1,6 +1,6 @@
 # Stage_Ros
 
-Ce contient un résumé de mon avancement pendant le stage, il complète le fichier avancement.txt qui énumère simplement les tâches.
+Ce fichier contient un résumé de mon avancement pendant le stage, il complète le fichier avancement.txt qui énumère simplement les tâches.
 Je vais aussi essayer d'expliquer mes choix.
 
 On a dans le dossier urdf les fichiers qui contiennent les objets barrier et traffic_lights, ils sont ensuite utilisé dans le monde arene.world
