@@ -23,7 +23,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://tunnel.stl</uri>
+            <uri>model://tunnel2.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -50,7 +50,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://tunnel.stl</uri>
+            <uri>model://tunnel2.stl</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>

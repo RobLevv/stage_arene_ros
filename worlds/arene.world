@@ -160,7 +160,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://tunnel.stl</uri>
+              <uri>model://tunnel2.stl</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -187,7 +187,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://tunnel.stl</uri>
+              <uri>model://tunnel2.stl</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -268,10 +268,10 @@
         </link>
       </model>
       <model name='tunnel'>
-        <pose>-0.67 -1.55 0 0 -0 0</pose>
+        <pose>-0.189 -0.946 0 0 -0 3.14</pose>
         <scale>1 1 1</scale>
         <link name='link_0'>
-          <pose>-0.675848 -1.59842 0 0 -0 0</pose>
+          <pose>-0.189 -0.946 0 0 -0 3.14</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>

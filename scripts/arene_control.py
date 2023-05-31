@@ -66,25 +66,36 @@ if __name__=="__main__":
         AC = AreneControl()
         try:
             char = click.getchar()
-            if char == 'a':
+            # Control of the barriers with the keyboard with lights
+            if char == 'a': # open barrier 1
+                AC.yellow_blink1(1)
                 AC.pub_barrier1.publish(0.2)
-            if char == 'q':
-                AC.pub_barrier1.publish(-0.2)
-            if char == 'z':
-                AC.pub_barrier2.publish(0.2)
-            if char == 's':
-                AC.pub_barrier2.publish(-0.2)
-            if char == 'e':
                 AC.to_green1()
-            if char == 'r':
-                AC.to_red1()
-            if char == 't':
+            if char == 'q': # close barrier 1
                 AC.yellow_blink1(3)
-            if char == 'd':
+                AC.pub_barrier1.publish(-0.2)
+                AC.to_red1()
+            if char == 'z': # open barrier 2
+                AC.yellow_blink2(1)
+                AC.pub_barrier2.publish(0.2)
                 AC.to_green2()
-            if char == 'f':
+            if char == 's': # close barrier 2
+                AC.yellow_blink2(3)
+                AC.pub_barrier2.publish(-0.2)
                 AC.to_red2()
-            if char == 'g':
+
+            # If we want to control the traffic lights manually
+            if char == 'e': # green light 1
+                AC.to_green1()
+            if char == 'r': # red light 1
+                AC.to_red1()
+            if char == 't': # yellow light 1
+                AC.yellow_blink1(3)
+            if char == 'd': # green light 2
+                AC.to_green2()
+            if char == 'f': # red light 2
+                AC.to_red2()
+            if char == 'g': # yellow light 2
                 AC.yellow_blink2(3)
 
         except rospy.ROSInterruptException:
