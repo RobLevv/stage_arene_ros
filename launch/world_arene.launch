@@ -21,13 +21,8 @@
   <rosparam file="$(find stage_arene_ros)/config/config.yaml" command="load" />
   <node name="controller_spawner_b1" pkg="controller_manager" type="spawner" ns="/barrier_1" args="gear_to_barrier_1_position_controller joint_1_state_controller"/> 
   <node name="controller_spawner_b2" pkg="controller_manager" type="spawner" ns="/barrier_2" args="gear_to_barrier_2_position_controller joint_2_state_controller"/>
-  <node name="controller_spawner_tl" pkg="controller_manager" type="spawner" ns="/traffic_lights_1" args="base_to_light_1_position_controller light_1_state_controller base_to_light_2_position_controller light_2_state_controller base_to_light_3_position_controller light_3_state_controller"/> 
-
-  <!-- <param name="robot_description" textfile="$(find stage_arene_ros)/urdf/traffic_lights.urdf.xacro"/>
-  <node name="traffic_lights_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model traffic_light -param robot_description -x 0.0 -y 0.0 -z 0.0"/> -->
-
-  <!-- <node name="controller_spawner_tl" pkg="controller_manager" type="spawner" ns="/traffic_lights_1" args="base_to_light_1_position_controller light_1_state_controller base_to_light_2_position_controller light_2_state_controller base_to_light_3_position_controller light_3_state_controller"/>  -->
-  <!-- base_to_light_2_position_controller light_2_state_controller base_to_light_3_position_controller light_3_state_controller -->
+  <node name="controller_spawner_tl1" pkg="controller_manager" type="spawner" ns="/traffic_lights_1" args="base_to_light_1_position_controller_1 light_1_state_controller_1 base_to_light_2_position_controller_1 light_2_state_controller_1 base_to_light_3_position_controller_1 light_3_state_controller_1"/> 
+  <node name="controller_spawner_tl2" pkg="controller_manager" type="spawner" ns="/traffic_lights_2" args="base_to_light_1_position_controller_2 light_1_state_controller_2 base_to_light_2_position_controller_2 light_2_state_controller_2 base_to_light_3_position_controller_2 light_3_state_controller_2"/>
 
   <node name="arene_control" pkg="stage_arene_ros" type="arene_control.py" output="screen" />
 

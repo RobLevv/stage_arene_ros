@@ -247,38 +247,6 @@
       <real_time>190 656075944</real_time>
       <wall_time>1685456009 159459905</wall_time>
       <iterations>171298</iterations>
-      <model name='barrier_1'>
-        <pose>-1.5 0.9 0.0005 0 0 1.57</pose>
-        <scale>1 1 1</scale>
-        <link name='barrier_1'>
-          <pose>-1.4888 0.931263 0.013993 1.5716 0.001552 3.14159</pose>
-          <velocity>2.6e-05 -2.5e-05 -0.012018 0.003646 0.003897 3e-06</velocity>
-          <acceleration>0.051961 -0.080705 -23.7094 -0.676036 1.43305 0.007419</acceleration>
-          <wrench>0.00052 -0.000807 -0.237094 0 -0 0</wrench>
-        </link>
-        <link name='base_link'>
-          <pose>-1.4988 0.907763 0.001495 -5e-06 4.1e-05 0</pose>
-          <velocity>5e-06 -5e-06 -0.012065 0.003642 0.003892 3e-06</velocity>
-          <acceleration>0.073534 -0.114705 -23.8542 -0.688283 1.42423 0.007191</acceleration>
-          <wrench>0.02206 -0.034412 -7.15625 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='barrier_2'>
-        <pose>-1.14 -1.6 0.0005 0 0 3.14</pose>
-        <scale>1 1 1</scale>
-        <link name='barrier_2'>
-          <pose>-1.13176 -1.56736 0.014004 1.70972 -1.56501 3.00267</pose>
-          <velocity>-0 0 -0 0 -0 0</velocity>
-          <acceleration>-0 -0 -0 0 -0 0</acceleration>
-          <wrench>-0 -0 -0 0 -0 0</wrench>
-        </link>
-        <link name='base_link'>
-          <pose>-1.14176 -1.59086 0.001507 -8e-06 3.8e-05 0</pose>
-          <velocity>-0 0 -0 0 -0 0</velocity>
-          <acceleration>-0 -0 -0 0 -0 0</acceleration>
-          <wrench>-0 -0 -0 0 -0 0</wrench>
-        </link>
-      </model>
       <model name='course'>
         <pose>0 0 0.0001 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -300,7 +268,7 @@
         </link>
       </model>
       <model name='tunnel'>
-        <pose>-0.675848 -1.59842 0 0 -0 0</pose>
+        <pose>-0.67 -1.55 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link_0'>
           <pose>-0.675848 -1.59842 0 0 -0 0</pose>
@@ -315,7 +283,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-1.08252 -2.08182 1.44472 0 1.52364 0.296999</pose>
+        <pose>0 0 2 0 1.57 0</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
