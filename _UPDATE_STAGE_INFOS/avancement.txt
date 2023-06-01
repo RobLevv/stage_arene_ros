@@ -1,57 +1,62 @@
 (</)DONE(</)  ROS Raspberry PI :
-                          Internet OK (actuellement sur mon portable)
-                          mise a jour OK
+                    Internet OK (actuellement sur mon portable)
+                    mise a jour OK
 
 (</)DONE(</)  Prototype barrière: 
-                          lumière + servo moteur connectés OK
-                          script automatique OK
+                    lumière + servo moteur connectés OK
+                    script automatique OK
 
 (</)DONE(</)  Simu 3D barrière: 
-                          Rviz OK 
-                          Spawn gazebo OK 
-                          Controle de la liaison avec ROS (service appelable) OK
+                    Rviz OK 
+                    Spawn gazebo OK 
+                    Controle de la liaison avec ROS (service appelable) OK
 
 (->)EN COURS(->)  Dessin barrière:
-                          Prototype SolidWorks OK
-                          Fichiers pour impression (juste la barrière en gravure) AF
+                    Prototype SolidWorks OK
+                    Fichiers pour impression (juste la barrière en gravure) AF
 
 (</)DONE(</) Simu 3D feux:
-                          Rviz OK
-                          spawn gazebo OK
-                          controle lumière feu OK
+                    Rviz OK
+                    spawn gazebo OK
+                    controle lumière feu OK
 (GO)A FAIRE(GO) Dessin Feux:
-                          Prototype SolidWorks AF
-                          Fichiers pour impression AF
+                    Prototype SolidWorks AF
+                    Fichiers pour impression AF
 
 (->)EN COURS(->) Prototype RaspPI + Arduino + barrière + feux:
-                          FINIR simu + dessin barrière OK
-                          FINIR simu + dessin feux OK
-                          Simulation Gazebo avec toute la nouvelle piste EC
-                          Communication entre RaspPI et Arduino EC
-                          Construire la nouvelle piste AF
-                          Duppliquer la piste AF
-                          
+                    FINIR simu + dessin barrière OK
+                    FINIR simu + dessin feux OK
+                    Simulation Gazebo avec toute la nouvelle piste OK
+                    Communication entre RaspPI et Arduino EC
+                    Construire la nouvelle piste AF
+                    Duppliquer la piste AF
+                    
 ================================================================
 TACHES DE FOND
 ================================================================
 (->)EN COURS(->) Seconde piste:
-                          Retracer le parcours EC
-                          Retracer les lignes AF
-                          
+                    Retracer le parcours EC
+                    Retracer les lignes AF
+                    
 (->)EN COURS(->) Checkup des turtlebots:  
-                          Launch pour les checkups OK
-                          Verifier connection (6/?)
-                          Verifier nodes, cam,teleop,scan (6/?)
-                          
+                    Launch pour les checkups OK
+                    Verifier connection (6/?)
+                    Verifier nodes, cam,teleop,scan (6/?)
+                    
 (->)EN COURS(->) Amélioration Simu Gazebo:
-                          Mesurer FOV cams OK
-                          Mesurer dimensions AF
-                          Reporter mesures AF
+                    Mesurer FOV cams OK
+                    Mesurer dimensions tunnel OK
+                    Reporter mesures camera AF
+                    Reporter mesures tunnel OK
 
 (</)DONE(</) Amélioration salle rob:
-                          Ecrans OK
-                          Rangemet OK
-                          Menage OK
-                          Cables OK
+                    Ecrans OK
+                    Rangement OK
+                    Menage OK
+                    Cables OK
+
+(->)EN COURS(->) Tutos utilisation ROS, Gazebo etc...:
+                    Tuto moteur simple OK
+                    Tuto turtlebot OK
                           
                  

@@ -1,0 +1,49 @@
+TURTLEBOT [N]
+
+Connect to turtlebot[N] WIFI
+# password : @turtlebot_wifi@
+=> if using a virtual machine
+# change neywork  from "NAT" to "bridged" + "replicate physical connection state"
+
+==============================================
+For any new connection on a turtlebot
+==============================================
+--> new terminal 1
+#eb
+## export ROS_MASTER_URI=http://192.168.0.[machine IP]
+## export ROS_HOSTNAME=192.168.0.[machine IP]
+ctrl + s ; ctrl + x
+--> new terminal 2
+# ssh ubuntu@192.168.0.[turtlebot IP] (ex: 1[N])
+## mot de passe : turtlebot
+# eb
+## export ROS_MASTER_URI=http://192.168.0.[machine IP]
+## export ROS_HOSTNAME=192.168.0.[turtlebot IP]
+ctrl + s ; ctrl + x
+
+Close all terminals
+
+==============================================
+Launching nodes, launch etc...
+==============================================
+
+--> new terminal 1
+# ssh ubuntu@192.168.0.[turtlebot IP]
+## password : turtlebot
+
+--> new terminal 2
+# roscore
+
+--> terminal 1
+# roslaunch turtlebot3_bringup turtlebot3_core.launch
+(if you just want the robot to wake up)
+# roslaunch turtlebot3_bringup turtlebot3_robot.launch
+(if you want the robot to wake up, the scan and the camera to start)
+
+--> new terminal 3 (if the camera is not already started)
+# ssh ubuntu@192.168.0.[turtlebot IP]
+## password : turtlebot
+# roslaunch usb_cam usb_cam-test
+
+--> new terminal 4
+# roslaunch projet challenge.launch

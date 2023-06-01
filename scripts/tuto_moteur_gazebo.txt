@@ -1,37 +1,122 @@
-###turtlebot3_burger_for_autorace_2020.gazebo.xacro
+###########################################################################
+How to create a controlable joint using URDF, Gazebo and ROS
+###########################################################################
 
+This is an example of how to create a controlable joint using URDF, Gazebo and ROS.
+all the functions are empty, it is a structure example.
+[options] are optional parameters defaulting to 0 
+to specify those parameters : [parameter] => parameter="value"
+
+##### URDF #####
+
+# Abstract link fixed to the world
+<link name="world"/>
+
+# Base link and joint
+
+<link name="base_link"> 
+    # The origin of the link defines the position of its center of mass
+    <visual></visual> # Visual representation (MANDATORY for urdf)
+    <inertial></inertial> # Inertial representation (MANDATORY for gazebo)
+    <collision></collision> # Collision representation (OPTIONAL)
+</link>
+
+<joint name="base_joint" type="fixed">
+    # The origin in the joint defines the position of the connection with the parent link
+    <parent link="world"/>
+    <child link="base_link"/>
+</joint>
+
+
+# Joint with one degree of freedom
+
+<link name="link_1"> 
+    <visual></visual> # Visual representation (MANDATORY for urdf)
+    <inertial></inertial> # Inertial representation (MANDATORY for gazebo)
+    <collision></collision> # Collision representation (OPTIONAL)
+</link>
+
+<joint name="joint_1" [type]> # type can be fixed, revolute, continuous, prismatic, floating, planar
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <origin [xyz] [rpy]/>
+    <axis [xyz]/> # Axis of the actuator
+    <limit [effort] [velocity] [lower] [upper]/> # Limits of the joint (required for revolute and prismatic)
+    <dynamics [damping] [friction]/> # Dynamics of the joint (OPTIONAL)
+</joint>
+
+##### Gazebo #####
+
+# You can add those functions to your urdf file or create a separate file and include it in your urdf file
+
+# Reference to let gazebo know the links in the model
 <gazebo reference=[LINK]>
-    #infos de dynamique : inertie, masse, frottements, maxVel ...
-</gazebo>
-
+    # You can add several physics parameters to your joint
+    <material>Gazebo/Blue</material> # Color of the link
+    ...
 <gazebo>
-    <plugin name="[PLUGIN]" filename="libgazebo_ros_control.so"> # je suis pas sur pour le filename
-        <commandTopic>[TOPIC]</commandTopic> # pour le robot c'est cmd_vel
-        #plein d'autres infos sur la dynamique du robot
+
+# Plugins to control the joint
+<gazebo>
+    <plugin [name] [filename]> # The basic plugin is libgazebo_ros_control.so
+        <robotNamespace>/</robotNamespace> # Namespace of the robot
     </plugin>
 </gazebo>
 
-###turtlebot3_burger_for_autorace_2020.urdf.xacro
-
-#on crée un robot
-<robot name="turtlebot3_burger_for_autorace_2020" xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find turtlebot3_description)/urdf/[FILE].gazebo.xacro" />
-    #surement un common_properties pour faire joli
-
-    <link name="[LINK]">
-        #on fait bien attention à ce que le nom du link soit le même que celui du fichier gazebo.xacro
-        #on met les propriétés de la géométrie du robot
-        <visual></visual>
-        <collision></collision>
-        <inertial></inertial>
-    </link>
-
-    <joint name="[JOINT]" type="fixed"> # continuous pour les roues/ revolute pour les bras
-        <parent link="[LINK_PARENT]"/>
-        <child link="[LINK_ENFANT]"/>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
-        #si ya du revolute ya des limites
-        <axis></axis>
-        <limit></limit>
+# Transmission to let gazebo know the type of actuator on the joint
+<transmission [name]>
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator [name]>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint [name]>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> # You can chose between EffortJointInterface, PositionJointInterface, VelocityJointInterface
     </joint>
-</robot>
+</transmission>
+
+##### YAML #####
+
+# Configuration file for the controller
+
+# Robot -----------------------------------------------------
+robot_1:
+
+    # Publish all joint states -----------------------------------
+    joint_state_controller:
+        type: joint_state_controller/JointStateController
+        publish_rate: 50
+
+    # Controllers ------------------------------------------------
+    joint_1_position_controller:
+        type: effort_controllers/JointPositionController
+        joint: joint_1
+    joint_1_velocity_controller:
+        type: effort_controllers/JointVelocityController
+        joint: joint_1
+    joint_1_effort_controller:
+        type: effort_controllers/JointEffortController
+        joint: joint_1
+
+    # You can use 3 different packages for the controllers : effort_controllers, position_controllers, velocity_controllers
+    # As long as you install them
+
+# PID --------------------------------------------------------
+# In newer versions of Gazebo PIDs must be specified out of the controller
+robot_1/gazebo_ros_control/pid_gains:
+    joint_1: {p: 100.0, i: 0.01, d: 10.0}
+
+# Only one joint state controller is needed
+# You must specify each controller for each joint and type of control you collide_without_contact
+
+
+##### ROS #####
+
+# There are now topics for every controller you created
+# You can publish to those topics to control the joints
+
+topic : /robot_1/joint_1_position_controller/command
+type : std_msgs/Float64
+
+from std_msgs.msg import Float64
+publisher = rospy.Publisher("/robot_1/joint_1_position_controller/command", Float64, queue_size=10)
+publisher.publish(0.0)

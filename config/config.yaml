@@ -23,7 +23,7 @@ barrier_2/gazebo_ros_control/pid_gains:
   gear_to_barrier_2: {p: 100.0, i: 0.01, d: 10.0}
 
 traffic_lights_1:
-  light_1_state_controller_1:
+  TL1_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
   
@@ -31,17 +31,9 @@ traffic_lights_1:
     type: effort_controllers/JointEffortController
     joint: base_to_light_green_1
 
-  light_2_state_controller_1:
-    type: joint_state_controller/JointStateController
-    publish_rate: 50
-  
   base_to_light_2_position_controller_1:
     type: effort_controllers/JointEffortController
     joint: base_to_light_yellow_1
-
-  light_3_state_controller_1:
-    type: joint_state_controller/JointStateController
-    publish_rate: 50
 
   base_to_light_3_position_controller_1:
     type: effort_controllers/JointEffortController
@@ -53,25 +45,17 @@ traffic_lights_1/gazebo_ros_control/pid_gains:
   base_to_light_red_1: {p: 100.0, i: 0.01, d: 10.0}
 
 traffic_lights_2:
-  light_1_state_controller_2:
+  TL2_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
   
   base_to_light_1_position_controller_2:
     type: effort_controllers/JointEffortController
     joint: base_to_light_green_2
-
-  light_2_state_controller_2:
-    type: joint_state_controller/JointStateController
-    publish_rate: 50
   
   base_to_light_2_position_controller_2:
     type: effort_controllers/JointEffortController
     joint: base_to_light_yellow_2
-
-  light_3_state_controller_2:
-    type: joint_state_controller/JointStateController
-    publish_rate: 50
 
   base_to_light_3_position_controller_2:
     type: effort_controllers/JointEffortController
