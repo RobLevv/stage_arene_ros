@@ -1,0 +1,39 @@
+<launch>
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="x_pos" default="0.0"/>
+  <arg name="y_pos" default="0.0"/>
+  <arg name="z_pos" default="0.0"/>
+  <arg name="init_pose" value="-x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)"/>
+  <arg name="robot_name" value="burger"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find stage_arene_ros)/worlds/arene.world"/>
+    <!-- <arg name="world_name" value="$(find gazebo_ros)/worlds/empty_world.world"/> -->
+    <!-- <arg name="world_name" value="$(find stage_arene_ros)/worlds/Projet2023_2.world"/> -->
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <group ns="arene">
+    <param name="robot_description" textfile="$(find stage_arene_ros)/urdf/barrier.urdf"/>
+    <param name="tf_prefix" value="barrier_tf"/>
+    <include file="$(find stage_arene_ros)/launch/arene.launch" >
+        <arg name="init_pose" value="-x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)"/>
+        <arg name="robot_name" value="barrier"/>
+    </include>
+  </group>
+
+  
+    
+  <!-- Robot spawning -->
+  <param name="robot_description" textfile="$(find turtlebot3_description)/urdf/turtlebot3_burger_for_autorace_2020.urdf.xacro"/>
+  <node name="spawn_turtlebot" pkg="gazebo_ros" type="spawn_model" args="$(arg init_pose) -urdf -param /robot_description -model $(arg robot_name)" respawn="false" output="screen" />
+  <!-- Robot controllers -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  <!-- Robot teleop script -->
+  <node name="teleop" pkg="stage_arene_ros" type="teleop_gazebo.py" output="screen" />
+</launch>

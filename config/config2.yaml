@@ -1,4 +1,4 @@
-barrier_1:
+arene/barrier_1:
   joint_1_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
@@ -7,8 +7,7 @@ barrier_1:
     type: effort_controllers/JointEffortController
     joint: gear_to_barrier_1
 
-
-barrier_2:
+arene/barrier_2:
   joint_2_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
@@ -17,13 +16,13 @@ barrier_2:
     type: effort_controllers/JointEffortController
     joint: gear_to_barrier_2
     
-barrier_1/gazebo_ros_control/pid_gains:
+arene/barrier_1/gazebo_ros_control/pid_gains:
   gear_to_barrier_1: {p: 100.0, i: 0.01, d: 10.0}
 
-barrier_2/gazebo_ros_control/pid_gains:
+arene/barrier_2/gazebo_ros_control/pid_gains:
   gear_to_barrier_2: {p: 100.0, i: 0.01, d: 10.0}
 
-traffic_lights_1:
+arene/traffic_lights_1:
   TL1_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
@@ -40,12 +39,12 @@ traffic_lights_1:
     type: effort_controllers/JointEffortController
     joint: base_to_light_red_1
 
-traffic_lights_1/gazebo_ros_control/pid_gains:
+arene/traffic_lights_1/gazebo_ros_control/pid_gains:
   base_to_light_green_1: {p: 100.0, i: 0.01, d: 10.0}
   base_to_light_orange_1: {p: 100.0, i: 0.01, d: 10.0}
   base_to_light_red_1: {p: 100.0, i: 0.01, d: 10.0}
 
-traffic_lights_2:
+arene/traffic_lights_2:
   TL2_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
@@ -62,7 +61,7 @@ traffic_lights_2:
     type: effort_controllers/JointEffortController
     joint: base_to_light_red_2
 
-traffic_lights_2/gazebo_ros_control/pid_gains:
+arene/traffic_lights_2/gazebo_ros_control/pid_gains:
   base_to_light_green_2: {p: 100.0, i: 0.01, d: 10.0}
   base_to_light_orange_2: {p: 100.0, i: 0.01, d: 10.0}
   base_to_light_red_2: {p: 100.0, i: 0.01, d: 10.0}

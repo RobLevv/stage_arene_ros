@@ -310,14 +310,6 @@
               <box size="0.1 0.03 0.005"/>
           </geometry>
       </visual>
-
-      <collision>
-          <origin xyz="0 0 0.001" rpy="0 0 0"/>
-          <geometry>
-              <box size="0.09 0.029 0.0049"/>
-          </geometry>
-      </collision>
-
       <inertial>
           <origin xyz="0 0 0" rpy="0 0 0"/>
           <mass value="0.1"/>
@@ -461,14 +453,6 @@
               <box size="0.1 0.03 0.005"/>
           </geometry>
       </visual>
-
-      <collision>
-          <origin xyz="0 0 0.001" rpy="0 0 0"/>
-          <geometry>
-              <box size="0.09 0.029 0.0049"/>
-          </geometry>
-      </collision>
-
       <inertial>
           <origin xyz="0 0 0" rpy="0 0 0"/>
           <mass value="0.1"/>

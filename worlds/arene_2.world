@@ -508,8 +508,8 @@
             <velocity>100</velocity>
           </limit>
           <dynamics>
-            <damping>0.1</damping>
-            <friction>0.1</friction>
+            <damping>0</damping>
+            <friction>0.001</friction>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
           </dynamics>
@@ -640,7 +640,7 @@
           </limit>
           <dynamics>
             <damping>0</damping>
-            <friction>0.1</friction>
+            <friction>0.001</friction>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
           </dynamics>
@@ -693,7 +693,7 @@
           </limit>
           <dynamics>
             <damping>0</damping>
-            <friction>0.1</friction>
+            <friction>0.001</friction>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
           </dynamics>
@@ -746,7 +746,7 @@
           </limit>
           <dynamics>
             <damping>0</damping>
-            <friction>0.1</friction>
+            <friction>0.001</friction>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
           </dynamics>
@@ -928,8 +928,8 @@
             <velocity>100</velocity>
           </limit>
           <dynamics>
-            <damping>0.1</damping>
-            <friction>0.1</friction>
+            <damping>0</damping>
+            <friction>0.001</friction>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
           </dynamics>
@@ -1060,7 +1060,7 @@
           </limit>
           <dynamics>
             <damping>0</damping>
-            <friction>0.1</friction>
+            <friction>0.001</friction>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
           </dynamics>
@@ -1113,7 +1113,7 @@
           </limit>
           <dynamics>
             <damping>0</damping>
-            <friction>0.1</friction>
+            <friction>0.001</friction>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
           </dynamics>
@@ -1166,7 +1166,7 @@
           </limit>
           <dynamics>
             <damping>0</damping>
-            <friction>0.1</friction>
+            <friction>0.001</friction>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
           </dynamics>
@@ -1205,19 +1205,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
-        <robotNamespace>/barrier_1</robotNamespace>
-      </plugin>
-      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
-        <robotNamespace>/barrier_2</robotNamespace>
-      </plugin>
-      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
-        <robotNamespace>/traffic_lights_1</robotNamespace>
-      </plugin>
-      <static>0</static>
-      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
-        <robotNamespace>/traffic_lights_2</robotNamespace>
-      </plugin>
       <pose>0 0 0 0 -0 0</pose>
     </model>
   </world>

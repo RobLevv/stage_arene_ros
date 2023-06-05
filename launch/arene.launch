@@ -1,0 +1,14 @@
+<launch>
+
+  <arg name="robot_name"/>
+  <arg name="init_pose"/>
+
+  <!-- Robot spawning -->
+  <node name="spawn_arene" pkg="gazebo_ros" type="spawn_model" args="$(arg init_pose) -urdf -param /arene/robot_description -model $(arg robot_name)" respawn="false" output="screen" />
+  <!-- Controllers -->
+  <rosparam file="$(find stage_arene_ros)/config/config2.yaml" command="load" />
+  <node name="controller_spawner_b1" pkg="controller_manager" type="spawner" ns="/arene/barrier_1" args="gear_to_barrier_1_position_controller joint_1_state_controller"/> 
+  <node name="controller_spawner_b2" pkg="controller_manager" type="spawner" ns="/arene/barrier_2" args="gear_to_barrier_2_position_controller joint_2_state_controller"/>
+  <node name="controller_spawner_tl1" pkg="controller_manager" type="spawner" ns="/arene/traffic_lights_1" args="TL1_state_controller base_to_light_1_position_controller_1 base_to_light_2_position_controller_1 base_to_light_3_position_controller_1 "/> 
+  <node name="controller_spawner_tl2" pkg="controller_manager" type="spawner" ns="/arene/traffic_lights_2" args="TL2_state_controller base_to_light_1_position_controller_2 base_to_light_2_position_controller_2 base_to_light_3_position_controller_2"/>
+</launch>
