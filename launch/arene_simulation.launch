@@ -1,4 +1,5 @@
 <launch>
+  <!-- Setup -->
   <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
   <arg name="x_pos" default="0.0"/>
   <arg name="y_pos" default="0.0"/>
@@ -13,10 +14,16 @@
     <arg name="debug" value="false"/>
   </include>
 
-  <node name="world_controller" pkg="stage_arene_ros" type="world_control.py" output="screen" />
-
   <param name="robot_description" command="$(find xacro)/xacro $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+
+  <node name="world_controller" pkg="stage_arene_ros" type="world_control.py" output="screen" />
+
+
+  <!-- Student work -->
+  <node name="teleop_turtlebot" pkg="stage_arene_ros" type="teleop_gazebo.py" output="screen" />
+
+  <node name="example_control" pkg="stage_arene_ros" type="example_control.py" output="screen" />
 
 </launch>
 

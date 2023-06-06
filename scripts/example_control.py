@@ -14,18 +14,6 @@ if __name__ == "__main__":
 
     while not rospy.is_shutdown():
         try:
-            # print("try start")
-            # pubCMDarene.publish("traffic_light,1,green")
-            # time.sleep(5)
-            # pubCMDarene.publish("traffic_light,1,yellow")
-            # time.sleep(0.5)
-            # pubCMDarene.publish("barrier,1,close")
-            # time.sleep(5)
-            # pubCMDarene.publish("traffic_light,1,red")
-            # time.sleep(5)
-            # pubCMDarene.publish("barrier,1,open")
-            # time.sleep(5)
-            # print("try end")
             pubCMDarene.publish("barrier,1,close")
             time.sleep(TIMESLEEP)
             pubCMDarene.publish("barrier,1,open")
