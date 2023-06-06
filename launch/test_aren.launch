@@ -1,0 +1,4 @@
+<launch>
+    <node name="arene_setup" pkg="stage_arene_ros" type="arene_control_real.py" output="screen" />
+    <node name="student_control" pkg="stage_arene_ros" type="test_com_4_arduino.py" output="screen" />
+</launch>

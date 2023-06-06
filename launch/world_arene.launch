@@ -6,8 +6,6 @@
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find stage_arene_ros)/worlds/arene_2.world"/>
-    <!-- <arg name="world_name" value="$(find gazebo_ros)/worlds/empty_world.world"/> -->
-    <!-- <arg name="world_name" value="$(find stage_arene_ros)/worlds/Projet2023_2.world"/> -->
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
@@ -15,28 +13,10 @@
     <arg name="debug" value="false"/>
   </include>
 
+  <node name="world_controller" pkg="stage_arene_ros" type="world_control.py" output="screen" />
 
-  <node name="world_control" pkg="stage_arene_ros" type="world_control.py" output="screen" />
-  <!-- Arene spawning -->  
-  <!-- <param name="robot_description" textfile="$(find stage_arene_ros)/urdf/barrier.urdf"/> -->
-  <!-- <node name="barrier_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model barrier -param robot_description -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)"/> -->
-  <!-- Controllers -->
-  <!-- <rosparam file="$(find stage_arene_ros)/config/config.yaml" command="load" /> -->
-  <!-- <node name="controller_spawner_b1" pkg="controller_manager" type="spawner" ns="/barrier_1" args="gear_to_barrier_1_position_controller joint_1_state_controller"/>  -->
-  <!-- <node name="controller_spawner_b2" pkg="controller_manager" type="spawner" ns="/barrier_2" args="gear_to_barrier_2_position_controller joint_2_state_controller"/> -->
-  <!-- <node name="controller_spawner_tl1" pkg="controller_manager" type="spawner" ns="/traffic_lights_1" args="TL1_state_controller base_to_light_1_position_controller_1 base_to_light_2_position_controller_1 base_to_light_3_position_controller_1 "/>  -->
-  <!-- <node name="controller_spawner_tl2" pkg="controller_manager" type="spawner" ns="/traffic_lights_2" args="TL2_state_controller base_to_light_1_position_controller_2 base_to_light_2_position_controller_2 base_to_light_3_position_controller_2"/> -->
-  <!-- Controllers script -->
-  <!-- <node name="arene_control" pkg="stage_arene_ros" type="arene_control.py" output="screen" /> -->
-
-  <!-- NYI -->
-  <!-- Robot spawning -->
-  <!-- <node name="spawn_turtlebot" pkg="gazebo_ros" type="spawn_model" args="-file $(find turtlebot3_description)/urdf/turtlebot3_burger_for_autorace_2020.urdf.xacro -urdf -z 1 -model burger" /> -->
-  <!-- Robot controllers -->
-  <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/> -->
-  <!-- Robot teleop script -->
-  <!-- <node name="teleop" pkg="stage_arene_ros" type="teleop_gazebo.py" output="screen" /> -->
+  <param name="robot_description" command="$(find xacro)/xacro $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
 
 </launch>
 

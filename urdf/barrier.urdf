@@ -1,19 +1,22 @@
 <?xml version="1.0" ?>
+
+
 <robot name="barrier">
-  
+
   <link name="world"/>
 
-<!-- barrier 1 -->
-  <joint name="base_joint_1" type="fixed">
+<!-- Barrier 1 -->
+  <joint name="barrier_joint" type="fixed">
     <parent link="world"/>
-    <child link="base_link_1"/>
-    <origin xyz="-1.5 0.9 0.01" rpy="0 0 1.57"/>
+    <child link="base_link"/>
+    <origin xyz="-1.50 0.9 0.025" rpy="0 0 1.57"/>
   </joint>
 
-  <link name="base_link_1">
+  <link name="base_link">
+
     <visual>
       <geometry>
-        <box size="0.05 0.05 0.005"/>
+        <box size="0.05 0.05 0.05"/>
       </geometry>
     </visual>
 
@@ -31,143 +34,31 @@
                 iyy="0.0001" iyz="0"
                 izz="0.0001" />
     </inertial>
+
   </link>
 
-  <link name="motor_1">
-    <inertial>
-      <mass value="0.1"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia  ixx="0.01" ixy="0" ixz="0"
-                iyy="0.01" iyz="0"
-                izz="0.01" />
-    </inertial>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.04 0.037 0.02"/>
-      </geometry>
-    </collision>
-    <visual>
-      <geometry>
-        <box size="0.04 0.037 0.02"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <joint name="base_to_motor_1" type="fixed">
-    <parent link="base_link_1"/>
-    <child link="motor_1"/>
-    <origin xyz="0 0 0.0125" rpy="0 0 0"/>
+  <joint name="base_to_barrier" type="revolute"> 
+    <parent link="base_link"/>
+    <child link="barrier"/>
+    <origin xyz="-0.025 0.025 0.0" rpy="1.57 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000" lower="-1.57" upper="0" velocity="1.0"/>
+    <dynamics damping="0.0" friction="0.1"/>
   </joint>
 
-  <link name="gear_1">
-    <inertial>
-      <mass value="0.1"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="0.01" ixy="0" ixz="0"
-              iyy="0.01" iyz="0"
-              izz="0.01" />
-    </inertial>
-    <collision>
-      <origin xyz="0.01 0.021 0" rpy="-1.57 3.14 0"/>
-      <geometry>
-        <cylinder radius="0.01" length="0.005"/>
-      </geometry>
-    </collision>
+  <link name="barrier">
+
     <visual>
-        <geometry>
-            <cylinder radius="0.01" length="0.005"/>
-        </geometry>
-    </visual>
-  </link>
-
-  <joint name="motor_to_gear_1" type="fixed">
-      <parent link="motor_1"/>
-      <child link="gear_1"/>
-      <origin xyz="0.01 0.021 0" rpy="-1.57 3.14 0"/>
-  </joint>
-
-  <link name="barrier_1">
-    <inertial>
-      <mass value="0.01"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="0.01" ixy="0" ixz="0"
-              iyy="0.01" iyz="0"
-              izz="0.01" />
-    </inertial>
-    <collision>
-      <origin xyz="0.14 0.02 0.0005" rpy="0 0 0"/>
+    <origin xyz="-0.125 0.04 -0.0025" rpy="0 0 0"/>
       <geometry>
-        <box size="0.3 0.06 0.001"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin xyz="0.14 0.02 0.0005" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.3 0.06 0.001"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <joint name="gear_to_barrier_1" type="revolute">
-      <limit upper="1.57" lower="0" velocity="100" effort="100"/>
-      <origin xyz="0 0 0.0025 " rpy="0 0 0"/>
-      <axis xyz="0 0 1"/>
-      <parent link="gear_1"/>
-      <child link="barrier_1"/>
-      <dynamics damping="0.1" friction="0.1"/>
-  </joint>
-
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/barrier_1</robotNamespace>
-    </plugin>
-  </gazebo>
-
-  <transmission name="gear_to_barrier_1_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <actuator name="motor1">
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-    <joint name="gear_to_barrier_1">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-  </transmission>
-
-
-  <gazebo reference="base_link_1">
-    <material>Gazebo/DarkGrey</material>
-  </gazebo>
-
-  <gazebo reference="motor_1">
-    <material>Gazebo/Black</material>
-  </gazebo>
-
-  <gazebo reference="gear_1">
-    <material>Gazebo/Grey</material>
-  </gazebo>
-
-  <gazebo reference="barrier_1">
-    <material>Gazebo/Yellow</material>
-  </gazebo>
-<!-- barrier 2 -->
-  <joint name="base_joint_2" type="fixed">
-    <parent link="world"/>
-    <child link="base_link_2"/>
-    <origin xyz="-0.75 -1.65 0.01" rpy="0 0 0"/>
-  </joint>
-
-  <link name="base_link_2">
-    <visual>
-      <geometry>
-        <box size="0.05 0.05 0.005"/>
+        <box size="0.3 0.08 0.005"/>
       </geometry>
     </visual>
 
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="-0.125 0.04 -0.0025" rpy="0 0 0"/>
       <geometry>
-        <box size="0.05 0.05 0.005"/>
+        <box size="0.3 0.08 0.005"/>
       </geometry>
     </collision>
 
@@ -178,126 +69,18 @@
                 iyy="0.0001" iyz="0"
                 izz="0.0001" />
     </inertial>
+
   </link>
 
-  <link name="motor_2">
-    <inertial>
-      <mass value="0.1"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia  ixx="0.01" ixy="0" ixz="0"
-                iyy="0.01" iyz="0"
-                izz="0.01" />
-    </inertial>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.04 0.037 0.02"/>
-      </geometry>
-    </collision>
-    <visual>
-      <geometry>
-        <box size="0.04 0.037 0.02"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <joint name="base_to_motor_2" type="fixed">
-    <parent link="base_link_2"/>
-    <child link="motor_2"/>
-    <origin xyz="0 0 0.0125" rpy="0 0 0"/>
-  </joint>
-
-  <link name="gear_2">
-    <inertial>
-      <mass value="0.1"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="0.01" ixy="0" ixz="0"
-              iyy="0.01" iyz="0"
-              izz="0.01" />
-    </inertial>
-    <collision>
-      <origin xyz="0.01 0.021 0" rpy="-1.57 3.14 0"/>
-      <geometry>
-        <cylinder radius="0.01" length="0.005"/>
-      </geometry>
-    </collision>
-    <visual>
-        <geometry>
-            <cylinder radius="0.01" length="0.005"/>
-        </geometry>
-    </visual>
-  </link>
-
-  <joint name="motor_to_gear_2" type="fixed">
-      <parent link="motor_2"/>
-      <child link="gear_2"/>
-      <origin xyz="0.01 0.021 0" rpy="-1.57 3.14 0"/>
-  </joint>
-
-  <link name="barrier_2">
-    <inertial>
-      <mass value="0.01"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="0.01" ixy="0" ixz="0"
-              iyy="0.01" iyz="0"
-              izz="0.01" />
-    </inertial>
-    <collision>
-      <origin xyz="0.14 0.02 0.0005" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.3 0.06 0.001"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin xyz="0.14 0.02 0.0005" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.3 0.06 0.001"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <joint name="gear_to_barrier_2" type="revolute">
-      <limit upper="1.57" lower="0" velocity="100" effort="100"/>
-      <origin xyz="0 0 0.0025 " rpy="0 0 0"/>
-      <axis xyz="0 0 1"/>
-      <parent link="gear_2"/>
-      <child link="barrier_2"/>
-      <dynamics damping="0.1" friction="0.1"/>
-  </joint>
-
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/barrier_2</robotNamespace>
-    </plugin>
+  <gazebo reference="base_link">
+    <material>Gazebo/Gray</material> 
   </gazebo>
 
-  <transmission name="gear_to_barrier_2_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <actuator name="motor1">
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-    <joint name="gear_to_barrier_2">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-  </transmission>
-
-  <gazebo reference="base_link_2">
-    <material>Gazebo/DarkGrey</material>
+  <gazebo reference="barrier">
+    <material>Gazebo/Red</material>
   </gazebo>
 
-  <gazebo reference="motor_2">
-    <material>Gazebo/Black</material>
-  </gazebo>
-
-  <gazebo reference="gear_2">
-    <material>Gazebo/Grey</material>
-  </gazebo>
-
-  <gazebo reference="barrier_2">
-    <material>Gazebo/Yellow</material>
-  </gazebo>
-
-<!-- traffic light 1 -->
+<!-- traffic light 1 
   <joint name="base_joint_1_tl" type="fixed">
       <parent link="world"/>
       <child link="base_link_1_tl"/>
@@ -440,7 +223,7 @@
       </joint>
   </transmission>
 
-<!-- traffic light 2 -->
+ traffic light 2
   <joint name="base_joint_2_tl" type="fixed">
       <parent link="world"/>
       <child link="base_link_2_tl"/>
@@ -581,6 +364,6 @@
       <joint name="base_to_light_red_2">
           <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
-  </transmission>
+  </transmission>-->
 
 </robot>
