@@ -10,7 +10,7 @@ import cv2
 from sensor_msgs.msg import Image,CompressedImage
 
 def callbackScan(scan):
-        """Returns the angle error and the number of obstacles detected"""
+        """Function to receive and process the laser scan"""
         
         # Plot the scan
         sonar(scan.ranges)
@@ -26,13 +26,13 @@ def sonar(vector):
             y.append(val)               # Distance
             
         # Plot the scan
-        plt.polar(x,y,"ro") # Polar plot
+        fig.polar(x,y,"ro") # Polar plot
         ax = plt.gca()
         ax.set_rmax(0.5)
-        plt.draw()
-        plt.title("Scan")
-        plt.pause(0.01)     # Pause to let the plot update
-        plt.clf()           # Clear the plot
+        fig.draw()
+        fig.title("Scan")
+        fig.pause(0.01)     # Pause to let the plot update
+        fig.clf()           # Clear the plot
 
 def image_callback(image):
     cvImage_raw = bridge.imgmsg_to_cv2(image, desired_encoding='bgr8')
@@ -47,6 +47,8 @@ if __name__=="__main__":
     subScan = rospy.Subscriber("/scan",LaserScan,callbackScan)
     subCam = rospy.Subscriber('/cam/image_raw', Image, image_callback)
     image_sub_compressed = rospy.Subscriber('/raspicam_node/image/compressed', CompressedImage, image_callback_compressed)
+
+    fig = plt.figure()
 
     rospy.init_node( 'checkup', anonymous=True )
     rospy.spin()

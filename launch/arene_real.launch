@@ -1,6 +1,6 @@
 <launch>
     <!-- Setup -->
-    <node name="arduino_startup" pkg="stage_arene_ros" type="test_com_4_arduino.py" output="screen" />
+    <node name="arduino_setup" pkg="stage_arene_ros" type="test_com_4_arduino.py" output="screen" />
 
     <!-- Student work -->
     <node name="example_control" pkg="stage_arene_ros" type="example_control.py" output="screen" />

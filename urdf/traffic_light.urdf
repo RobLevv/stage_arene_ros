@@ -1,8 +1,24 @@
 <?xml version="1.0" ?>
+<!-- This file contains the URDF/Gazebo description of a Traffic Light. Used in the package stage_arene_ros.
+    Structure:
+        link :  world (fixed in the simulation)
+        joint:  world <-> base_link (fixed)
+        link :  base_link (base box of the traffic light)
+        joint:  base_link <-> light_red (prismatic [0:0.002] )
+        link :  light_red
+        joint:  base_link <-> light_yellow (prismatic [0:0.002] )
+        link :  light_yellow
+        joint:  base_link <-> light_green (prismatic [0:0.002] )
+        link :  light_green
+    Parameters:
+        LINK : visual, collision, inertial
+        JOINT: type, parent, child, origin, [limit], [dynamics]-->
+        
 <robot name="traffic_light">
 
     <link name="world"/>
 
+    <!-- This joint fixes base_link to the world, position defined by origin -->
     <joint name="base_joint" type="fixed">
         <parent link="world"/>
         <child link="base_link"/>
@@ -34,6 +50,7 @@
 
     </link>
 
+    <!-- Red light, link + joint -->
     <link name="light_red">
         <visual>
             <geometry>
@@ -59,6 +76,7 @@
         <dynamics damping="0.0" friction="0.1"/>
     </joint>
 
+    <!-- Yellow light, link + joint -->
     <link name="light_yellow">
         <visual>
             <geometry>
@@ -84,6 +102,7 @@
         <dynamics damping="0.0" friction="0.1"/>
     </joint>
 
+    <!-- Green light, link + joint -->
     <link name="light_green">
         <visual>
             <geometry>
@@ -109,6 +128,7 @@
         <dynamics damping="0.0" friction="0.1"/>
     </joint>
 
+    <!-- Gazebo colors -->
     <gazebo reference="base_link">
         <material>Gazebo/Gray</material>
     </gazebo>
