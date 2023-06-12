@@ -13,7 +13,7 @@ def callbackScan(scan):
         """Function to receive and process the laser scan"""
         
         # Plot the scan
-        sonar(scan.ranges)
+        # sonar(scan.ranges)
 
 
 def sonar(vector):
@@ -26,13 +26,13 @@ def sonar(vector):
             y.append(val)               # Distance
             
         # Plot the scan
-        fig.polar(x,y,"ro") # Polar plot
+        plt.polar(x,y,"ro") # Polar plot
         ax = plt.gca()
         ax.set_rmax(0.5)
-        fig.draw()
-        fig.title("Scan")
-        fig.pause(0.01)     # Pause to let the plot update
-        fig.clf()           # Clear the plot
+        plt.draw()
+        plt.title("Scan")
+        plt.pause(0.01)     # Pause to let the plot update
+        plt.clf()           # Clear the plot
 
 def image_callback(image):
     cvImage_raw = bridge.imgmsg_to_cv2(image, desired_encoding='bgr8')
@@ -44,11 +44,9 @@ def image_callback_compressed(msg):
 
 if __name__=="__main__":
     bridge = cv_bridge.CvBridge()
-    subScan = rospy.Subscriber("/scan",LaserScan,callbackScan)
-    subCam = rospy.Subscriber('/cam/image_raw', Image, image_callback)
+    # subScan = rospy.Subscriber("/scan",LaserScan,callbackScan)
+    # subCam = rospy.Subscriber('/cam/image_raw', Image, image_callback)
     image_sub_compressed = rospy.Subscriber('/raspicam_node/image/compressed', CompressedImage, image_callback_compressed)
-
-    fig = plt.figure()
 
     rospy.init_node( 'checkup', anonymous=True )
     rospy.spin()

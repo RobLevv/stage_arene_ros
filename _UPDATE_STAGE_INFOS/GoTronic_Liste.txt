@@ -1,0 +1,29 @@
+D'après mes recherches poussées (1 vidéo avec pleins de leds et leur luminosité),
+il faut pour une bonne luminosité entre 500 et 1000 mcd pour commencer 
+On a actuellement des leds de 20 mcd, donc on est très loin du compte.
+(je ne suis pas sûr que les leds sont à 20 mais en dessous de 50 en tout cas et ce n'est pas assez)
+
+
+Led 5 mm L53GD5 VERTE 20 mcd (nulle luminosité) - 60°
+https://www.gotronic.fr/art-led-5-mm-l53gd5-21466.htm 
+0.40€
+
+
+LED 5mm EL7344 VERTE 3200 mcd (forte luminosité) - 30°
+https://www.gotronic.fr/art-led-5-mm-el7344-17635.htm 
+0.60€
+
+X8
+LED 5mm L5FVH BLANCHE 5000 mcd (forte luminosité) - 20°
+https://www.gotronic.fr/art-led-5-mm-l5fwh-2214.htm 
+0.80€
+
+X20 idk lot
+Câbles bobine 10m toutes les couleurs (1mm)
+https://www.gotronic.fr/cat-fil-de-cablage-souple-0-14-mm-1569.htm 
+2.30€
+
+X8
+Transistor BS170
+https://www.gotronic.fr/art-transistor-bs170-1569.htm 
+0.30€
