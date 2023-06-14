@@ -4,26 +4,52 @@ On a actuellement des leds de 20 mcd, donc on est très loin du compte.
 (je ne suis pas sûr que les leds sont à 20 mais en dessous de 50 en tout cas et ce n'est pas assez)
 
 
-Led 5 mm L53GD5 VERTE 20 mcd (nulle luminosité) - 60°
-https://www.gotronic.fr/art-led-5-mm-l53gd5-21466.htm 
-0.40€
+multiplier les références pour les leds la casse et au cas ou ...
+2 types de transistors solo et en 1 seul bloc
+CONNECTEURS HE10 FEMELLES À SERTIR
+CONNECTEURS HE10 MÂLES À SERTIR
+https://www.gotronic.fr/cat-he10-2-54-mm-882.htm 
 
 
-LED 5mm EL7344 VERTE 3200 mcd (forte luminosité) - 30°
-https://www.gotronic.fr/art-led-5-mm-el7344-17635.htm 
-0.60€
-
-X8
+X8 ###ACHETER###
 LED 5mm L5FVH BLANCHE 5000 mcd (forte luminosité) - 20°
 https://www.gotronic.fr/art-led-5-mm-l5fwh-2214.htm 
-0.80€
+0.80€ /piece
 
-X20 idk lot
-Câbles bobine 10m toutes les couleurs (1mm)
-https://www.gotronic.fr/cat-fil-de-cablage-souple-0-14-mm-1569.htm 
-2.30€
+5m ###CHERCHER###
+Câble en nappe CNG40 40 conducteurs - 1,27 mm
+https://www.gotronic.fr/art-cable-en-nappe-cng40-5122.htm 
+4.35€ /metre
 
-X8
+X20 ###CHERCHER###
 Transistor BS170
 https://www.gotronic.fr/art-transistor-bs170-1569.htm 
-0.30€
+0.30€ /piece
+
+X2 ###OK###
+Servo moteur : Servomoteur FR5113M Feetech
+https://www.gotronic.fr/art-servomoteur-fr5113m-33689.htm 
+23.50€ /piece
+
+X20 ###ACHETER### (pas besoin finalement)
+RPi Camera (I), Fisheye Lens SKU: 11388 Part Number: RPi Camera (I) Brand: Waveshare
+https://www.waveshare.com/rpi-camera-i.htm 
+$27.99 /piece
+
+X1 ###FABLAB###
+Boitier pour Raspberry et écran TFT3.2CASE
+https://www.gotronic.fr/art-boitier-pour-raspberry-et-ecran-tft3-2case-26715.htm
+8.80 € /piece
+
+X2 ###FABLAB###
+Barriere bois 30x10x1mm
+
+X1 ###ACHETER###
+Kit de refroidissement ZP-0042 pour Raspberry Pi 3B, 3B+ et 4B
+https://www.gotronic.fr/art-kit-de-refroidissement-zp-0042-34419.htm
+15.90€ /piece
+
+X1 ###ACHETER###
+Radiateurs pour Raspberry
+https://www.gotronic.fr/art-radiateurs-pour-raspberry-19847.htm
+2.30€
