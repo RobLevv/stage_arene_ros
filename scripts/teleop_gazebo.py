@@ -2,41 +2,42 @@
 # -*- coding: utf-8 -*-
 
 import rospy
+import sys, termios, tty
 import click
 from geometry_msgs.msg import Twist
 
+# Arrow keys codes
+keys = {'\x1b[A':'up', '\x1b[B':'down', '\x1b[C':'right', '\x1b[D':'left','z':'up', 's':'down', 'd':'right', 'q':'left', 'p':'stop', 'w':'quit'}
+
 if __name__ == '__main__':
-    # Initialize the node, the pubCMDlisher and the message
     rospy.init_node("robot_teleop",anonymous=True)
     msg = Twist()
-    pubCMD = rospy.Publisher("/cmd_vel",Twist,queue_size=10)
+    pub = rospy.Publisher("/cmd_vel",Twist,queue_size=10)
+    while not rospy.is_shutdown():
 
-    try:    
-
-        # Get character from console
-        key = click.getchar()
-
-        # Initialize the message
-        msg.linear.x = 0
-        msg.angular.z = 0
-
-        # Move the robot with the keyboard
-        if key == 'z': # forward
-            msg.linear.x = 0.2
-        if key == 's': # backward
-            msg.linear.x = -0.2
-        if key == 'd': # turn right
-            msg.angular.z = -0.5
-        if key == 'q': # turn left
-            msg.angular.z = 0.5
-
-        if key == 'p': # stop
+        try:    
             msg.linear.x = 0
             msg.angular.z = 0
+            # Get character from console
+            mykey = click.getchar()
+            if mykey in keys.keys():
+                char=keys[mykey]
 
-        # Publish the message
-        pubCMD.publish(msg)
-
-
-    except rospy.ROSInterruptException:
-        pass
+            if char == 'up':    # UP key
+                msg.linear.x = 0.1
+                
+            if char == 'down':  # DOWN key
+                msg.linear.x = -0.1
+                
+            if char == 'left':  # LEFT
+                msg.angular.z = 0.5
+                
+            if char == 'right': # RIGHT
+                msg.angular.z = -0.5
+            pub.publish(msg)
+            if char == "quit":  # QUIT
+                msg.linear.x = 0
+            
+            
+        except rospy.ROSInterruptException:
+            pass

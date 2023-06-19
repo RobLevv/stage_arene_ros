@@ -8,13 +8,35 @@
 # NT: not tested
 # X: not working
 
-
-Turtlebot4 : Connection=X; Scan=OK; Camera=NT; robot_launch=NT; montage=OK
-Turtlebot5 : Connection=OK; Scan=OK; Camera=OK; robot_launch=OK; montage=OK
-Turtlebot8 : Connection=OK; Scan=OK; Camera=OK; robot_launch=OK; montage=OK
-Turtlebot12 : Connection=OK; Scan=OK; Camera=OK; robot_launch=OK; montage=OK
-Turtlebot14 : Connection=OK; Scan=OK; camera=RaspiCam; robot_launch=raspicam; montage=OK
-Turtlebot15 : Connection=X; Scan=X; Camera=NT; robot_launch=NT; montage=OK
-Turtlebot21 : Connection=OK; Scan=OK; Camera=OK; robot_launch=OK; montage=OK
-Turtlebot23 : Connection=OK; Scan=OK; Camera=OK; robot_launch=OK; montage=reverse
-Turtlebot26 : Connection=OK; Scan=OK; Camera=raspicam OK; robot_launch=OK; montage=OK
+Turtlebot1   : Connection=OK; Scan=OK; Camera=OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot2  : Connection=OK; Scan=OK; Camera=OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot3  : Connection=OK; Scan=OK; Camera=OK; Teleop=X; robot_launch=OK; montage=OK
+Turtlebot4  : Connection=X; Scan=OK; Camera=NT; Teleop=NT; robot_launch=NT; montage=OK
+Turtlebot5  : Connection=OK; Scan=OK; Camera=OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot6  : Connection=OK; Scan=OK; Camera=OK; Teleop=X; robot_launch=OK; montage=OK
+Turtlebot7  : Connection=OK; Scan=OK; Camera=OK; Teleop=X; robot_launch=OK; montage=OK
+Turtlebot8  : Connection=OK; Scan=OK; Camera=OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot9  : Pas de carte SD ( dans la raspberry de l'arene) 
+Turtlebot10 : Connection=OK; Scan=OK; Camera=rpi OK; Teleop=NT; robot_launch=OK; montage=OK
+Turtlebot11 : Connection=OK; Scan=OK; Camera=rpi rev2.2 OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot12 : Connection=OK; Scan=OK; Camera=OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot13 : Connection=OK; Scan=OK; Camera=OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot14 : Connection=OK; Scan=OK; camera=rpi OK; Teleop=OK; robot_launch=rpi OK; montage=OK
+Turtlebot15 : Connection=X; Scan=X; Camera=NT; Teleop=NT; robot_launch=NT; montage=OK
+Turtlebot16 : Connection=OK; Scan=OK; Camera=rpi OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot17 : Connection=OK; Scan=OK; Camera=OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot18 : Connection=OK; Scan=OK; Camera=OK; Teleop=x; robot_launch=OK; montage=OK
+[ERROR] [1614236173.553050]: Error opening serial: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+Turtlebot19 : Connection=OK; Scan=OK; Camera=OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot20 : n'existe pas
+Turtlebot21 : Connection=OK; Scan=OK; Camera=OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot22 : Connection=OK; Scan=OK; Camera=OK; Teleop=OK; robot_launch=OK; montage=OK (fil + et - mal branchés)
+Turtlebot23 : Connection=OK; Scan=OK; Camera=OK; Teleop=OK; robot_launch=OK; montage=reverse
+Turtlebot24 : Connection=OK; Scan=OK; Camera=rpi2 OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot25 : Connection=OK; Scan=OK; Camera=rpi OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot26 : Connection=OK; Scan=OK; Camera=rpi OK; Teleop=OK; robot_launch=rpi OK; montage=OK
+Turtlebot27 : Connection=OK; Scan=OK; Camera=rpi OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot28 : fil cramé débranché
+Turtlebot29 : Connection=OK; Scan=OK; Camera=rpi OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot30 : Connection=OK; Scan=OK; Camera=rpi OK; Teleop=OK; robot_launch=OK; montage=OK
+Turtlebot35 : Connection=OK; Scan=OK; Camera=OK; Teleop=OK; robot_launch=OK; montage=OK

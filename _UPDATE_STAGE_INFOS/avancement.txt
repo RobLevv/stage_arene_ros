@@ -11,38 +11,38 @@
                     Spawn gazebo OK 
                     Controle de la liaison avec ROS (service appelable) OK
 
-(->)EN COURS(->)  Dessin barrière:
+(</)DONE(</)  Dessin barrière:
                     Prototype SolidWorks OK
-                    Fichiers pour impression (juste la barrière en gravure) AF
+                    Fichiers pour impression (juste la barrière en gravure) OK
 
 (</)DONE(</) Simu 3D feux:
                     Rviz OK
                     spawn gazebo OK
                     controle lumière feu OK
 
-(GO)A FAIRE(GO) Dessin Feux:
-                    Prototype SolidWorks AF
-                    Fichiers pour impression AF
+(</)DONE(</) Dessin Feux:
+                    Prototype SolidWorks OK
+                    Fichiers pour impression OK
 
 (->)EN COURS(->) Prototype RaspPI + Arduino + barrière + feux:
                     FINIR simu + dessin barrière OK
                     FINIR simu + dessin feux OK
                     Simulation Gazebo avec toute la nouvelle piste OK
                     Communication entre RaspPI et Arduino OK
-                    Construire la nouvelle piste AF
-                    Duppliquer la piste AF
+                    Construire la nouvelle piste EC
+                    Duppliquer la piste EC
                     
 ================================================================
 TACHES DE FOND
 ================================================================
-(->)EN COURS(->) Seconde piste:
+(</)DONE(</) Seconde piste:
                     Retracer le parcours OK
-                    Retracer les lignes EC
+                    Retracer les lignes OK
                     
-(->)EN COURS(->) Checkup des turtlebots:  
+(</)DONE(</) Checkup des turtlebots:  
                     Launch pour les checkups OK
-                    Verifier connection (9/?)
-                    Verifier nodes, cam,teleop,scan (9/?)
+                    Verifier connection (30/30)
+                    Verifier nodes, cam,teleop,scan (30/30)
                     
 (->)EN COURS(->) Amélioration Simu Gazebo:
                     Mesurer FOV cams OK
@@ -66,12 +66,12 @@ TACHES SUPPLEMENTAIRES
 
 routeur wifi pour la salle rob turtlebot en communication Internet
 
-faire le schéma circuit pour l'arene (tinkercad)
+faire le schéma circuit pour l'arene (tinkercad) (</)DONE(</)
 
-faire la liste des composants pour l'arene (gotronic)
+faire la liste des composants pour l'arene (gotronic) (</)DONE(</)
     ventilo, led, moteur
 
-Conception arene: demontable, transportable, modulable, reconfigurable branchable
+Conception arene: demontable, transportable, modulable, reconfigurable branchable (</)DONE(</)
 
 
 
