@@ -40,3 +40,19 @@ Turtlebot28 : fil cramé débranché
 Turtlebot29 : Connection=OK; Scan=OK; Camera=rpi OK; Teleop=OK; robot_launch=OK; montage=OK
 Turtlebot30 : Connection=OK; Scan=OK; Camera=rpi OK; Teleop=OK; robot_launch=OK; montage=OK
 Turtlebot35 : Connection=OK; Scan=OK; Camera=OK; Teleop=OK; robot_launch=OK; montage=OK
+
+network:
+    ethernets:
+        eth0:
+            dhcp4: true
+            optional: true
+    renderer: NetworkManager
+    version: 2
+    wifis:
+        wlan0:
+            access-points:
+                turtlebot2_wifi:
+                    mode: ap
+                    password: '@turtlebot_wifi@'
+            addresses:
+            - 192.168.0.102/24
