@@ -6,7 +6,7 @@ import rospy
 from std_msgs.msg import String
 
 def callback(msg):
-    print("callbacking")
+    print("Command received: " + msg.data + "\n")
     tmp = msg.data.split(",")
     object_name = tmp[0]
     object_number = int(tmp[1])
@@ -18,11 +18,9 @@ def send_to_arduino(object_name, object_number, command):
     if object_name == "barrier":
         barrier_number = object_number
         if command == "open":
-            ser.write(str(barrier_number-1).encode('utf-8'))
-            ser.write(str(barrier_number*3 + 1 ).encode('utf-8'))
+            ser.write(str(barrier_number).encode('utf-8'))
         elif command == "close":
-            ser.write(str(barrier_number*3 + 3 ).encode('utf-8'))
-            ser.write(str(barrier_number-1 + 2).encode('utf-8'))
+            ser.write(str(barrier_number+2).encode('utf-8'))
         else:
             print("Unknown command.")
     else:

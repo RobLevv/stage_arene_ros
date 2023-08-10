@@ -31,6 +31,15 @@
                     Communication entre RaspPI et Arduino OK
                     Construire la nouvelle piste EC
                     Duppliquer la piste EC
+
+Reste à faire:
+- Souder chaque module (2/5)
+- Imprimer pièces 3D 
+    - feux en passage de câble (1/5)
+    - barrière en gravure (4/4)
+    - Boitier pour montage RaspPI + Arduino + feux + barrière (1/1)
+- Monter les modules (OK)
+- Clean up Code pour Arduino (OK)
                     
 ================================================================
 TACHES DE FOND
@@ -44,10 +53,9 @@ TACHES DE FOND
                     Verifier connection (30/30)
                     Verifier nodes, cam,teleop,scan (30/30)
                     
-(->)EN COURS(->) Amélioration Simu Gazebo:
+(</)DONE(</) Amélioration Simu Gazebo:
                     Mesurer FOV cams OK
                     Mesurer dimensions tunnel OK
-                    Reporter mesures camera AF
                     Reporter mesures tunnel OK
 
 (</)DONE(</) Amélioration salle rob:
@@ -56,7 +64,7 @@ TACHES DE FOND
                     Menage OK
                     Cables OK
 
-(->)EN COURS(->) Tutos utilisation ROS, Gazebo etc...:
+(</)DONE(</) Tutos utilisation ROS, Gazebo etc...:
                     Tuto moteur simple OK
                     Tuto turtlebot OK
 
