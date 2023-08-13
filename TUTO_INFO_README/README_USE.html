@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>How To USE this project</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="how-to-use-this-project">How To USE this project</h1>
+<h2 id="1-install-the-project">1. Install the project</h2>
+<h3 id="11-install-ros">1.1. Install ROS</h3>
+<p>Follow the instructions on the official website: <a href="http://wiki.ros.org/ROS/Installation">http://wiki.ros.org/ROS/Installation</a></p>
+<h3 id="12-install-the-project">1.2. Install the project</h3>
+<p>Clone the project in your catkin workspace:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> ~/catkin_ws/src
+git <span class="hljs-built_in">clone</span>
+</code></pre>
+<h3 id="13-install-the-dependencies">1.3. Install the dependencies</h3>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> ~/catkin_ws
+rosdep install --from-paths src --ignore-src -r -y
+</code></pre>
+<h3 id="14-build-the-project">1.4. Build the project</h3>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> ~/catkin_ws
+catkin_make
+</code></pre>
+<h2 id="2-run-the-project">2. Run the project</h2>
+<p>Every launch file in this project should launch everything required to run properly the project.</p>
+<h3 id="21-run-the-project-simulation-with-gazebo">2.1. Run the project simulation with Gazebo</h3>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> ~/catkin_ws
+<span class="hljs-built_in">source</span> devel/setup.bash
+roslaunch stage_arene_ros arene_simulation.launch
+</code></pre>
+<h3 id="22-run-the-project-real-arena-while-connected-to-the-raspberry-pi">2.2. Run the project real arena while connected to the Raspberry Pi</h3>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> ~/catkin_ws
+<span class="hljs-built_in">source</span> devel/setup.bash
+roslaunch stage_arene_ros arene_real.launch
+</code></pre>
+<h3 id="23-run-a-checkup-for-the-turtlebot-while-connected-to-the-robot">2.3. Run a checkup for the turtlebot while connected to the robot</h3>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> ~/catkin_ws
+<span class="hljs-built_in">source</span> devel/setup.bash
+roslaunch stage_arene_ros checkup.launch
+</code></pre>
+<h3 id="24-spawn-the-turtlebot-in-the-simulation-arena-while-gazebo-is-running">2.4. Spawn the turtlebot in the simulation arena while Gazebo is running</h3>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> ~/catkin_ws
+<span class="hljs-built_in">source</span> devel/setup.bash
+roslaunch stage_arene_ros spawn_turtlebot.launch
+</code></pre>
+<h2 id="3-build-the-arena">3. Build the arena</h2>
+<p>There is 2 traffic lights tri-colored, 1 bi-colored, 2 barriers and 1 control box.</p>
+<ul>
+<li>Plug the power supply to the Raspberry Pi.</li>
+<li>Plug the power supply to the board.</li>
+<li>Check that the Raspberry Pi is linked to the arduino with the USB cable.</li>
+<li>Check that the shield is plugged on the arduino.</li>
+<li>Plug each module to the box:
+<ol>
+<li>Traffic light tri-colored n°1</li>
+<li>Barrier n°1</li>
+<li>Traffic light tri-colored n°2</li>
+<li>Barrier n°2</li>
+<li>Traffic light bi-colored</li>
+</ol>
+</li>
+</ul>
+<p>(In case the order the order is mixed up, the program will not work properly, please check that the traffic lights are connected with blue wires and the barriers with yellow wires inside the box)</p>
+
+        
+        
+    </body>
+    </html>
