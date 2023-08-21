@@ -45,7 +45,7 @@ def image_callback_compressed(msg):
 if __name__=="__main__":
     bridge = cv_bridge.CvBridge()
     # subScan = rospy.Subscriber("/scan",LaserScan,callbackScan)
-    subCam = rospy.Subscriber('/cam/image_raw', Image, image_callback)
+    subCam = rospy.Subscriber('/camera/image', Image, image_callback)
     # image_sub_compressed = rospy.Subscriber('/raspicam_node/image/compressed', CompressedImage, image_callback_compressed)
     # subCam = rospy.Subscriber('/camera/image',Image, image_callback)
 
