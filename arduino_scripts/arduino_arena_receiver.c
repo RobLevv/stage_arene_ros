@@ -17,6 +17,9 @@
 #define BiLight_pin1 6
 #define BiLight_pin2 7
 #define BiLight_pin3 8
+//Servo pins
+#define Servo1_pin A1
+#define Servo2_pin A2
 
 //Servo objects
 Servo servo1;
