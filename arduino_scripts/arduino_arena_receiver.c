@@ -38,8 +38,8 @@ void setup(){
     pinMode(BiLight_pin2, OUTPUT);
     pinMode(BiLight_pin3, OUTPUT);
     //Servo objects
-    servo1.attach(A1);
-    servo2.attach(A2);
+    servo1.attach(Servo1_pin);
+    servo2.attach(Servo2_pin);
     //Start serial communication
     Serial.begin(9600);
     //Initialize all lights to off

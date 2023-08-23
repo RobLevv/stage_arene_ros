@@ -67,7 +67,7 @@ roslaunch stage_arene_ros spawn_turtlebot.launch
 
 ## 3. Build the arena
 
-There is 2 traffic lights tri-colored, 1 bi-colored, 2 barriers and 1 control box.
+There are 2 traffic lights tri-colored, 1 bi-colored, 2 barriers and 1 control box.
 
 - Plug the power supply to the Raspberry Pi.
 - Plug the power supply to the board.

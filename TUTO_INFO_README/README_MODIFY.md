@@ -15,7 +15,6 @@ It is composed of a main loop that is executed indefinitely and choosing between
 - 'Opening the 2nd barrier'
 - 'Closing the 1st barrier'
 - 'Closing the 2nd barrier'
--
 
 The traffic lights are linked to the barriers so that they are green when the barrier is open and red when the barrier is closed. Those functions are implemented in this file. To modify the behavior of the traffic lights, you have to modify the functions `open_barrier()` and `close_barrier()`.
 
@@ -24,10 +23,10 @@ The traffic lights are linked to the barriers so that they are green when the ba
 This file is the one that is executed on the Raspberry Pi. It allows the communication between the Arduino and the Raspberry Pi. It is composed of 2 functions:
 
 - `callback()`: This function is called when a message is received on the topic `arene/cmd`, it makes the Arduino execute the command received.
-- `send_to_arduino()`: This function sends a number to the arduino on the serial port. This number is the command that the Arduino will execute.
+- `send_to_arduino()`: This function sends a number to the Arduino on the serial port. This number is the command that the Arduino will execute.
 The main function of this files initializes the node and the subscriber to the topic `arene/cmd`.
 
-### 1.2. Modify the Launch files
+### 1.2. Modify the launch files
 
 The launch files are located in the folder `launch`. There are 4 launch files:
 
@@ -48,9 +47,7 @@ The scripts are located in the folder `scripts`. There are 4 scripts:
 #### 1.3.1. `world_control.py`
 
 This script contains 2 classes that are used to control the modules, the `Barrier` class and the `TrafficLight` class. A `Barrier` contains a `TrafficLight` this way they are linked together. For each class there is a method `change_state()` that changes the state of the module. The different state are open and closed for the barrier and green and red for the traffic light. The method `change_state()` can be modified to add a blinking yellow light for the `TrafficLight` for example as for the barrier you can control the speed of the barrier. You can try to modify the part that changes the position of the barrier but you should keep the other parts that are making it work altogether.
-
 If you add new modules you must update the object list in the main function of the script.
-
 To modify the message on the topic `arene/cmd` you should modify the function `callback()`.
 
 #### 1.3.2. `example_control.py`
@@ -79,7 +76,7 @@ The link `world` allows the barrier to be static in the world, you have to remov
 
 This file is the URDF file for the traffic light. It contains a base and 3 moving parts for the 3 lights. You can modify this design, for example by making it vertical with a rotation in the joint description between the world and the base.
 
-The link `world` makes the base fixed to a position, if you move or rotate the base you have to adapt the position of the lights and of the base in the joint
+The link `world` makes the base fixed to a position, if you move or rotate the base you have to adapt the position of the lights and of the base in the joint.
 
 ## 1.5. Modify the world
 
@@ -87,7 +84,7 @@ The world files are located in the folder `world`. There are 5 files:
 
 ### 1.5.1. `arene_2.world`
 
-This world is the one that contains the barriers the lights and a tunnel, this is the file that was used during the project. You can modify it to add more barriers or lights or to change the position of the tunnel. You can also add more objects to the world. To do so, it is advised to open the world in gazebo, add the objects in the world and then save the world. You can ultimately, manually modify the world file to pinch the objects.
+This world is the one that contains the barriers, the lights and a tunnel, this is the file that was used during the project. You can modify it to add more barriers or lights or to change the position of the tunnel. You can also add more objects to the world. To do so, it is advised to open the world in gazebo, add the objects in the world and then save the world. You can ultimately, manually modify the world file to pinch the objects.
 
 This file is quite large so here are some milestones:
 
@@ -112,6 +109,6 @@ Future modification can include a fixing system for the barrier to the ground an
 
 ### 2.2. Modify the traffic light
 
-The traffic light is made of 3 led and a 3D printed base. The leds are wired to a board with a CD4007 which consist of 3 NAND gates. The board is plugged to the Arduino with 5 wires. The 5V and GND pins are plugged to the power supply and 3 signal pins are plugged to the pins of the Arduino.
+The traffic light is made of 3 LED and a 3D printed base. The LEDs are wired to a board with a CD4007 which consist of 3 NAND gates. The board is plugged to the Arduino with 5 wires. The 5V and GND pins are plugged to the power supply and 3 signal pins are plugged to the pins of the Arduino.
 
-Future modification can include a smaller board, colored leds or colored lenses, this could allow to a smaller 3D printed base.  If the field of view of the cameras used on the turtlebts is widfe enough it is possible to make an aerial traffic light.
+Future modification can include a smaller board, colored LEDs or colored lenses, this could allow to a smaller 3D printed base.  If the field of view of the cameras used on the turtlebot is wide enough it is possible to make an aerial traffic light.
